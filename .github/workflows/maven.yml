@@ -1,0 +1,52 @@
+name: Pyhton CI/CD with Maven
+
+env:
+  project_id: db-cicdpipeline-wave-3
+on:
+  push:
+    branches:
+      - main
+      - pui-test
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  BuildMaven:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test with pytest
+      run: |
+        pytest	--junitxml=coverage.xml 
+        py.test --cov-report term --cov-report xml:coverage.xml --cov=/src/test/test_area.py
+    
+    - name: publish unit test report
+      uses: actions/upload-artifact@v2
+      with:
+        path: /home/runner/work/wave3-cicd-pipe/wave3-cicd-pipe/coverage.xml
+        name: coverage.xml
+    
+    - name: Build and Package
+      run: |
+        mvn clean package
+        ls -lart target/*
+        
+    - name: publish artifact
+      uses: actions/upload-artifact@v2
+      with:
+        path: target/*.zip
+        name: Devops.zip
