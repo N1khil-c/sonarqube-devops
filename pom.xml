@@ -23,7 +23,7 @@
    		<sonar.exclusions>src/test/**,**/*.yml,**/*.json,**/__init.py,**</sonar.exclusions>
 		<sonar.python.coverage.reportPaths>coverage.xml</sonar.python.coverage.reportPaths> <!-- important here coverageReport file generating-->
    		<project.coverage.base.directory>${project.build.directory}/sonar/</project.coverage.base.directory>
-   		<sonar.java.coverage.reportPaths>${project.build.directory}/sonar/coverageReport.xml<sonar.java.coverage.reportPaths>
+   		<sonar.java.coverage.reportPaths>${project.build.directory}/sonar/coverageReport.xml</sonar.java.coverage.reportPaths>
    		<ecomms-event-persister.version>0.0.33</ecomms-event-persister.version>
    		<project.scm.id>github</project.scm.id>
 	</properties>
