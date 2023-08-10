@@ -13,7 +13,7 @@
 		<maven.compiler.target>11</maven.compiler.target>
 		<maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss'Z'</maven.build.timestamp.format>
    		<maven.release.plugin.version>2.5.3</maven.release.plugin.version>
-   		<maven-exec-plugin.version>3.0.0</maven.exec-plugin.version>
+   		<maven-exec-plugin.version>3.0.0</maven-exec-plugin.version>
    		<sonar.projectName>wave3-cicd-pipe</sonar.projectName>
    		<sonar-maven-plugin.version>3.7.0.1746<sonar-maven-plugin.version>
    		<sonar.language>py<sonar.language>
