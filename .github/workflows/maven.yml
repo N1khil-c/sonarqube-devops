@@ -73,3 +73,7 @@ jobs:
       with:
         path: target/*.zip
         name: Devops.zip
+
+    - name: Deploy to GCS
+      run: |
+        gsutil cp -r $GITHUB_WORKSPACE/ gs://terraform_bucket_cicd_2/    
