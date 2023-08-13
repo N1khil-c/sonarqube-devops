@@ -65,7 +65,7 @@ jobs:
     - name: publish unit test report
       uses: actions/upload-artifact@v2
       with:
-        path: /home/runner/work/wave3-cicd-pipe/wave3-cicd-pipe/coverage.xml
+        path: /home/runner/work/sonarqube-devops/sonarqube-devops/coverage.xml
         name: coverage.xml
         
     - name: publish artifact
