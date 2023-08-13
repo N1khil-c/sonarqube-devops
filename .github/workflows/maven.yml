@@ -34,12 +34,6 @@ jobs:
         pytest	--junitxml=coverage.xml 
         py.test --cov-report term --cov-report xml:coverage.xml --cov=/src/test/test_area.py
     
-    - name: publish unit test report
-      uses: actions/upload-artifact@v2
-      with:
-        path: /home/runner/work/wave3-cicd-pipe/wave3-cicd-pipe/coverage.xml
-        name: coverage.xml
-    
     - name: Build and Package
       run: |
         mvn clean package
@@ -66,7 +60,14 @@ jobs:
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
 
       run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
-      
+
+
+    - name: publish unit test report
+      uses: actions/upload-artifact@v2
+      with:
+        path: /home/runner/work/wave3-cicd-pipe/wave3-cicd-pipe/coverage.xml
+        name: coverage.xml
+        
     - name: publish artifact
       uses: actions/upload-artifact@v2
       with:
