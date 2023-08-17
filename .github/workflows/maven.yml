@@ -76,4 +76,4 @@ jobs:
 
     - name: Deploy to GCS
       run: |
-        gsutil cp -r $GITHUB_WORKSPACE/ gs://terraform_bucket_cicd_2/    
+        gsutil cp -r $GITHUB_WORKSPACE/src/main/area.py gs://terraform_bucket_cicd_2/    
