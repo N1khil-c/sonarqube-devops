@@ -41,6 +41,7 @@ jobs:
           pytest	--junitxml=coverage.xml 
           py.test --cov-report term --cov-report xml:coverage.xml --cov=/src/test/test_area.py
     
+
       - name: publish unit test report
         uses: actions/upload-artifact@v2
         with:
@@ -85,3 +86,4 @@ jobs:
           gsutil cp -r $GITHUB_WORKSPACE/src/main/area.py gs://asia-south2-composer-enviro-719fa6a7-bucket/dags
         #run: |
         #  gsutil cp -r $GITHUB_WORKSPACE/src/main/area.py gs://db-cicd-wave3
+
