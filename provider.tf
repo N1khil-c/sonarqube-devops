@@ -1,11 +1,12 @@
 provider "google" {
- project = var.project_id
- region  = var.region
+  project = "your-gcp-project-id"
+  region  = "us-central1"  # Use appropriate region
 }
 
-terraform {
-  backend "gcs" {
-    bucket = "cicd-py"
-    prefix = "terraform/state"
-  }
+resource "google_storage_bucket_iam_member" "role" {
+  bucket = "asia-south2-composer-enviro-719fa6a7-bucket"
+  role   = "roles/storage.admin"  # Replace with the desired role
+
+  member = "serviceAccount:cicd-wave3-serviceaccot@db-cicdpipeline-wave3.iam.gserviceaccount.com"
+}
 }
