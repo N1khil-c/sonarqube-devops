@@ -93,7 +93,7 @@ jobs:
 
       - name: Deploy to GCS
         run: |
-          gsutil cp -r $GITHUB_WORKSPACE/src/main/area.py gs://asia-south2-composer-enviro-719fa6a7-bucket/dags
+          gsutil cp -r $GITHUB_WORKSPACE/src/main/area.py gs://db-cicd-wave3
         #run: |
         #  gsutil cp -r $GITHUB_WORKSPACE/src/main/area.py gs://db-cicd-wave3
 
