@@ -9,4 +9,3 @@ resource "google_storage_bucket_iam_member" "role" {
 
   member = "serviceAccount:cicd-wave3-serviceaccot@db-cicdpipeline-wave3.iam.gserviceaccount.com"
 }
-}
