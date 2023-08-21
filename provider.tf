@@ -3,7 +3,7 @@ provider "google" {
   region  = "asia-south2"  # Use appropriate region
 }
 
-resource "google_storage_bucket_iam_member" "role" {
+resource "google_storage_bucket_iam_binding" "binding" {
   bucket = "db-cicd-wave3"
   # role   = "roles/storage.admin"   Replace with the desired role
   role   = "roles/storage.objects.create"
