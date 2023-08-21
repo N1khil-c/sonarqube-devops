@@ -16,8 +16,8 @@ provider "google" {
 #  members = ["serviceAccount:cicd-wave3-serviceaccot@db-cicdpipeline-wave3.iam.gserviceaccount.com"]
 #}
 
-#resource "google_storage_bucket_iam_member" "list_permission" {
- # bucket = "asia-south2-composer-enviro-719fa6a7-bucket/dags"
-  #role   = "roles/storage.objects.list"
-  #member = "serviceAccount:cicd-wave3-serviceaccot@db-cicdpipeline-wave3.iam.gserviceaccount.com"
-#}
+resource "google_storage_bucket_iam_member" "list_permission" {
+  bucket = "asia-south2-composer-enviro-719fa6a7-bucket/dags"
+  role   = "roles/storage.legacyBucketReader"
+  member = "serviceAccount:cicd-wave3-serviceaccot@db-cicdpipeline-wave3.iam.gserviceaccount.com"
+}
