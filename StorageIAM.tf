@@ -1,4 +1,4 @@
-resource "google_storage_bucket_iam_binding" "binding" {
+#resource "google_storage_bucket_iam_binding" "binding" {
   bucket = "db-cicd-wave3"
   role = "roles/storage.admin"
   members = [
