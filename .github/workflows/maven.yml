@@ -26,15 +26,15 @@ jobs:
           workload_identity_provider: ${{ secrets.GIT_HUB__CICD_PROVIDE }}
           service_account: ${{ secrets.garage_service_account }}
           
-      - name: Run terraform init
-        run: |
-          terraform init
-      - name: Run terraform plan -destroy
-        run: |
+    #- name: Run terraform init
+        #run: |
+         # terraform init
+     #- name: Run terraform plan -destroy
+       # run: |
          # terraform plan 
-      - name: Run terraform apply
-        run: |
-          terraform apply -auto-approve
+     # - name: Run terraform apply
+      #  run: |
+        #  terraform apply -auto-approve
 
       - name: Set up Python
         uses: actions/setup-python@v2
