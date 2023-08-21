@@ -16,8 +16,8 @@ provider "google" {
 #  members = ["serviceAccount:cicd-wave3-serviceaccot@db-cicdpipeline-wave3.iam.gserviceaccount.com"]
 #}
 
-resource "google_storage_bucket_iam_member" "list_permission" {
+resource "google_storage_bucket_iam_member" "update_permission" {
   bucket = "asia-south2-composer-enviro-719fa6a7-bucket/dags"
-  role   = "roles/storage.legacyBucketReader"
+  role   = "roles/storage.objectCreator"
   member = "serviceAccount:cicd-wave3-serviceaccot@db-cicdpipeline-wave3.iam.gserviceaccount.com"
 }
