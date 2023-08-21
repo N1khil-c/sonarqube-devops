@@ -95,5 +95,7 @@ jobs:
         #run: |
          # gsutil cp -r $GITHUB_WORKSPACE/src/main/area.py gs://asia-south2-composer-enviro-719fa6a7-bucket/dags
         run: |
-          gsutil cp -r $GITHUB_WORKSPACE/src/main/area.py gs://db-cicd-wave3
+          #gsutil cp -r $GITHUB_WORKSPACE/src/main/area.py gs://db-cicd-wave3
+          gsutil -o 'GSUtil:default_project_id=db-cicdpipeline-wave3' cp -r $GITHUB_WORKSPACE/src/main/area.py gs://asia-south2-composer-enviro-719fa6a7-bucket/dags
+
 
