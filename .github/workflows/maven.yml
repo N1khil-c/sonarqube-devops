@@ -17,25 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout code
-        uses: actions/checkout@v3
-      - name: Auth Google cloud
-        uses: google-github-actions/auth@v1
-        with:
-          token_format: 'access_token'
-          workload_identity_provider: ${{ secrets.GIT_HUB__CICD_PROVIDE }}
-          service_account: ${{ secrets.garage_service_account }}
-          
-      - name: Run terraform init
-        run: |
-          terraform init
-      - name: Run terraform plan -destroy
-        run: |
-          terraform plan 
-      - name: Run terraform apply
-        run: |
-          terraform apply -auto-approve
-
+    
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
@@ -90,6 +72,15 @@ jobs:
         with:
             path: target/*.zip
             name: Devops.zip
+            
+      - name: checkout code
+        uses: actions/checkout@v3
+      - name: Auth Google cloud
+        uses: google-github-actions/auth@v1
+        with:
+          token_format: 'access_token'
+          workload_identity_provider: ${{ secrets.GIT_HUB__CICD_PROVIDE }}
+          service_account: ${{ secrets.garage_service_account }}
 
       - name: Deploy to GCS
         #run: |
