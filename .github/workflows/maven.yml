@@ -80,7 +80,10 @@ jobs:
         with:
           token_format: 'access_token'
           workload_identity_provider: ${{ secrets.GIT_HUB__CICD_PROVIDE }}
-          service_account: ${{ secrets.garage_service_account }}            
+          service_account: ${{ secrets.garage_service_account }}     
+
+      - name: Verify authenticated account 
+        run: gcloud auth list
 
       - name: Deploy to GCS
         #run: |
