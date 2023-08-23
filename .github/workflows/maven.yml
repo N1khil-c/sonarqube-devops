@@ -17,7 +17,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    
+      - name: checkout code
+        uses: actions/checkout@v3
+
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
@@ -72,15 +74,13 @@ jobs:
         with:
             path: target/*.zip
             name: Devops.zip
-            
-      - name: checkout code
-        uses: actions/checkout@v3
+
       - name: Auth Google cloud
         uses: google-github-actions/auth@v1
         with:
           token_format: 'access_token'
           workload_identity_provider: ${{ secrets.GIT_HUB__CICD_PROVIDE }}
-          service_account: ${{ secrets.garage_service_account }}
+          service_account: ${{ secrets.garage_service_account }}            
 
       - name: Deploy to GCS
         #run: |
@@ -91,5 +91,3 @@ jobs:
           gcloud config set project db-cicdpipeline-wave3
           gsutil cp -r $GITHUB_WORKSPACE/src/main/area.py gs://asia-south2-composer-enviro-719fa6a7-bucket/dags
          #gsutil -o 'GSUtil:default_project_id=db-cicdpipeline-wave3' cp -r $GITHUB_WORKSPACE/src/main/area.py gs://asia-south2-composer-enviro-719fa6a7-bucket/dags
-
-
