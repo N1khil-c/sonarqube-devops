@@ -57,10 +57,9 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-
-      #run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
-      run: |
-        /opt/sonar-scanner-4.6.2..2472-linux/bin/soanr-scanner
+      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+      #run: |
+        #/opt/sonar-scanner-4.6.2..2472-linux/bin/soanr-scanner
 
 
     - name: publish unit test report
