@@ -14,6 +14,7 @@
 		<maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss'Z'</maven.build.timestamp.format>
    		<maven.release.plugin.version>2.5.3</maven.release.plugin.version>
    		<maven-exec-plugin.version>3.0.0</maven-exec-plugin.version>
+		<sonar.projectKey>wave-3-cicd-project</sonar.projectKey>
    		<sonar.projectName>wave3-cicd-pipe</sonar.projectName>
    		<sonar-maven-plugin.version>3.7.0.1746</sonar-maven-plugin.version>
    		<sonar.language>py</sonar.language>
@@ -27,9 +28,6 @@
    		<sonar.java.coverage.reportPaths>${project.build.directory}/sonar/coverageReport.xml</sonar.java.coverage.reportPaths>
    		<ecomms-event-persister.version>0.0.33</ecomms-event-persister.version>
    		<project.scm.id>github</project.scm.id>
-	</properties>
-	<properties>
- 		 <sonar.projectKey>wave-3-cicd-project</sonar.projectKey>
 	</properties>
 
 <build>
