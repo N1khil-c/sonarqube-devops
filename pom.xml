@@ -15,7 +15,7 @@
    		<maven.release.plugin.version>2.5.3</maven.release.plugin.version>
    		<maven-exec-plugin.version>3.0.0</maven-exec-plugin.version>
 		<sonar.projectKey>wave-3-cicd-project</sonar.projectKey>
-   		<sonar.projectName>wave3-cicd-pipe</sonar.projectName>
+#		<sonar.projectName>wave3-cicd-pipe</sonar.projectName>
    		<sonar-maven-plugin.version>3.7.0.1746</sonar-maven-plugin.version>
    		<sonar.language>py</sonar.language>
    		<sonar.sources>src/main</sonar.sources>
