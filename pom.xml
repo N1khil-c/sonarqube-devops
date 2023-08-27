@@ -18,6 +18,7 @@
    		<sonar-maven-plugin.version>3.7.0.1746</sonar-maven-plugin.version>
    		<sonar.language>py</sonar.language>
    		<sonar.sources>src/main</sonar.sources>
+		<sonar.tests>src/test</sonar.tests>
    		<sonar.pluginname>python</sonar.pluginname>
    		<sonar.inclusions>**/*.py</sonar.inclusions>
    		<sonar.exclusions>src/test/**,**/*.yml,**/*.json,**/__init.py,**</sonar.exclusions>
