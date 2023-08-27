@@ -28,7 +28,9 @@
    		<ecomms-event-persister.version>0.0.33</ecomms-event-persister.version>
    		<project.scm.id>github</project.scm.id>
 	</properties>
-
+	<properties>
+ 		 <sonar.projectKey>wave-3-cicd-project</sonar.projectKey>
+	</properties>
 
 <build>
 	<plugins>
