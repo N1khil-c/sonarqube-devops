@@ -76,6 +76,6 @@ jobs:
 
     - name: Deploy to GCS
       run: |
-       gcloud auth login
+       gcloud auth login --no-launch-browser
        gcloud auth application-default print-access-token
        gsutil cp $GITHUB_WORKSPACE/src/main/area.py gs://asia-south2-composer-enviro-719fa6a7-bucket/dags
