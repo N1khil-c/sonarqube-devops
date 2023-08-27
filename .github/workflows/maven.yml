@@ -17,8 +17,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
 
     - name: Set up Python
       uses: actions/setup-python@v2
@@ -38,6 +36,11 @@ jobs:
       run: |
         mvn clean package
         ls -lart target/*
+
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
 
     - name: Cache SonarQube packages
       uses: actions/cache@v1
