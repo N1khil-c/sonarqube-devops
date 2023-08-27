@@ -19,4 +19,10 @@ def test_calculate_area_square_string():
 def test_calculate_area_square_list():
     with pytest.raises(TypeError):
         calculate_area_square([2])
-        
+
+def test_calculate_area_square_complex_number():
+    with pytest.raises(TypeError):
+        calculate_area_square(2 + 3j)
+def test_import_area_circle():
+    with pytest.raises(ImportError):
+        from src.main.area import calculate_area_circle
