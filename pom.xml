@@ -17,9 +17,6 @@
    		<sonar-maven-plugin.version>3.7.0.1746</sonar-maven-plugin.version>
    		<sonar.sources>src/main/</sonar.sources>
 		<sonar.tests>src/test/</sonar.tests>
-   		<sonar.pluginname>python</sonar.pluginname>
-   		<sonar.inclusions>**/*.py</sonar.inclusions>
-		<sonar.python.coverage.reportPaths>coverage.xml</sonar.python.coverage.reportPaths> <!-- important here coverageReport file generating-->
 	</properties>
 
 <build>
