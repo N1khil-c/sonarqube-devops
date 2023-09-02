@@ -11,6 +11,20 @@
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	<maven.compiler.source>1.7</maven.compiler.source>
 	<maven.compiler.target>1.7</maven.compiler.target>
+		<maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss'Z'</maven.build.timestamp.format>
+   		<maven.release.plugin.version>2.5.3</maven.release.plugin.version>
+   		<maven-exec-plugin.version>3.0.0</maven-exec-plugin.version>
+   		<sonar-maven-plugin.version>3.7.0.1746</sonar-maven-plugin.version>
+   		<sonar.language>py</sonar.language>
+   		<sonar.sources>src/main/</sonar.sources>
+		<sonar.tests>src/test/</sonar.tests>
+   		<sonar.pluginname>python</sonar.pluginname>
+   		<sonar.inclusions>**/*.py</sonar.inclusions>
+		<sonar.python.coverage.reportPaths>coverage.xml</sonar.python.coverage.reportPaths> <!-- important here coverageReport file generating-->
+   		<project.coverage.base.directory>${project.build.directory}/sonar/</project.coverage.base.directory>
+   		<sonar.java.coverage.reportPaths>${project.build.directory}/sonar/coverageReport.xml</sonar.java.coverage.reportPaths>
+   		<ecomms-event-persister.version>0.0.33</ecomms-event-persister.version>
+   		<project.scm.id>github</project.scm.id>
 	</properties>
 
 <build>
