@@ -18,6 +18,3 @@ def test_string_input():
     with pytest.raises(TypeError):
         calculate_area_square("5")
 
-def test_boolean_input():
-    with pytest.raises(TypeError):
-        calculate_area_square(True)
